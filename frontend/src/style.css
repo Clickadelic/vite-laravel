@@ -38,6 +38,23 @@ h2 {
   padding: 32px 20px;
 }
 
+.app-nav {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.app-nav a {
+  color: var(--text-h);
+  text-decoration: none;
+}
+
+.app-nav a.router-link-exact-active {
+  text-decoration: underline;
+}
+
 .auth-forms {
   display: flex;
   flex-direction: column;
