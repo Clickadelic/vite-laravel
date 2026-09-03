@@ -1,5 +1,8 @@
 import { createApp } from "vue";
 
+// Let's remove it - maybe
+import "./assets/css/utility-classes.css";
+
 import "./assets/css/google-fonts.css";
 import "./style.css";
 import App from "./App.vue";

@@ -20,7 +20,8 @@
 	--text-base: 1rem;
 	--text-medium: 1.125rem;
 	--text-large: 1.25rem;
-	--text-xlarge: 1.5rem;
+	--text-xl: 1.5rem;
+	--text-2xl: 1.875rem;
 
 	--font-sans: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
@@ -82,10 +83,14 @@ main {
 	max-width: 90rem;
 }
 
-.mx-auto {
-	margin: 0 auto;
-}
-
 .font-bold {
 	font-weight: bold;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.bg-gray-light {
+	background: var(--gray-light);
 }
