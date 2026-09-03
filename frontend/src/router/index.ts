@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import { createRouterLayout } from "vue-router-layout";
 import { useAuth } from "../composables/useAuth";
 import DashboardPage from "../pages/DashboardPage.vue";
 import HomePage from "../pages/HomePage.vue";
@@ -12,13 +13,23 @@ declare module "vue-router" {
 	}
 }
 
+// Resolves a page's `layout: '...'` option (see src/layouts/*.vue) to the
+// matching layout component. Pages that don't set `layout` get 'default'.
+const RouterLayout = createRouterLayout((layout) => import(`../layouts/${layout}.vue`));
+
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes: [
-		{ path: "/", name: "home", component: HomePage },
-		{ path: "/login", name: "login", component: LoginPage, meta: { guestOnly: true } },
-		{ path: "/register", name: "register", component: RegisterPage, meta: { guestOnly: true } },
-		{ path: "/dashboard", name: "dashboard", component: DashboardPage, meta: { requiresAuth: true } }
+		{
+			path: "/",
+			component: RouterLayout,
+			children: [
+				{ path: "", name: "home", component: HomePage },
+				{ path: "login", name: "login", component: LoginPage, meta: { guestOnly: true } },
+				{ path: "register", name: "register", component: RegisterPage, meta: { guestOnly: true } },
+				{ path: "dashboard", name: "dashboard", component: DashboardPage, meta: { requiresAuth: true } }
+			]
+		}
 	]
 });
 

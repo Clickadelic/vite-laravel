@@ -38,6 +38,14 @@ h2 {
   padding: 32px 20px;
 }
 
+.auth-layout {
+  text-align: center;
+}
+
+.auth-layout .auth-forms {
+  text-align: left;
+}
+
 .app-nav {
   display: flex;
   gap: 16px;

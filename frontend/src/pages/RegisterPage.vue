@@ -1,3 +1,9 @@
+<script lang="ts">
+export default {
+	layout: "auth"
+};
+</script>
+
 <script setup lang="ts">
 import { reactive, ref } from "vue";
 import { useRouter } from "vue-router";
