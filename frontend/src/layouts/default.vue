@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { useAuth } from "../composables/useAuth";
+import { useAuth } from "@/composables/useAuth";
+import Logo from "@/components/AppLogo.vue";
 
 const { user } = useAuth();
 </script>
@@ -7,8 +8,8 @@ const { user } = useAuth();
 <template>
 	<div class="default-layout">
 		<div class="wrap">
-			<header>
-				<h1>Vite &amp; Laravel</h1>
+			<header class="container mx-auto">
+				<Logo />
 				<nav class="app-nav">
 					<router-link to="/">Home</router-link>
 					<template v-if="user">
