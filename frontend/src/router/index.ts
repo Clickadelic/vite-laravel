@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { createRouterLayout } from "vue-router-layout";
-import { useAuth } from "../composables/useAuth";
-import DashboardPage from "../pages/DashboardPage.vue";
-import HomePage from "../pages/HomePage.vue";
-import LoginPage from "../pages/LoginPage.vue";
-import RegisterPage from "../pages/RegisterPage.vue";
+import { useAuth } from "@/composables/useAuth";
+
+import DashboardPage from "@/pages/DashboardPage.vue";
+import HomePage from "@/pages/HomePage.vue";
+import LoginPage from "@/pages/auth/LoginPage.vue";
+import RegisterPage from "@/pages/auth/RegisterPage.vue";
 
 declare module "vue-router" {
 	interface RouteMeta {
@@ -15,7 +16,7 @@ declare module "vue-router" {
 
 // Resolves a page's `layout: '...'` option (see src/layouts/*.vue) to the
 // matching layout component. Pages that don't set `layout` get 'default'.
-const RouterLayout = createRouterLayout((layout) => import(`../layouts/${layout}.vue`));
+const RouterLayout = createRouterLayout(layout => import(`../layouts/${layout}.vue`));
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,8 +26,8 @@ const router = createRouter({
 			component: RouterLayout,
 			children: [
 				{ path: "", name: "home", component: HomePage },
-				{ path: "login", name: "login", component: LoginPage, meta: { guestOnly: true } },
-				{ path: "register", name: "register", component: RegisterPage, meta: { guestOnly: true } },
+				{ path: "auth/login", name: "login", component: LoginPage, meta: { guestOnly: true } },
+				{ path: "auth/register", name: "register", component: RegisterPage, meta: { guestOnly: true } },
 				{ path: "dashboard", name: "dashboard", component: DashboardPage, meta: { requiresAuth: true } }
 			]
 		}
@@ -41,7 +42,7 @@ const router = createRouter({
  */
 let authChecked = false;
 
-router.beforeEach(async (to) => {
+router.beforeEach(async to => {
 	const { user, fetchUser } = useAuth();
 
 	if (!authChecked) {

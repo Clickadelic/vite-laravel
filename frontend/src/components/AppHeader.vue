@@ -9,7 +9,7 @@ console.log("header component");
 
 <template>
 	<div class="wrap">
-		<header class="container mx-auto">
+		<header class="container mx-auto py-4">
 			<AppLogo />
 			<nav class="app-nav">
 				<router-link to="/">Home</router-link>
@@ -17,8 +17,8 @@ console.log("header component");
 					<router-link to="/dashboard">Dashboard</router-link>
 				</template>
 				<template v-else>
-					<router-link to="/login">Login</router-link>
-					<router-link to="/register">Register</router-link>
+					<router-link to="/auth/login">Login</router-link>
+					<router-link to="/auth/register">Register</router-link>
 				</template>
 			</nav>
 		</header>
@@ -27,4 +27,15 @@ console.log("header component");
 
 <style scoped>
 /* Placeholder */
+
+.wrap {
+	background: var(--primary);
+	box-shadow: 1px 0 2px rgba(0, 0, 0, 0.75);
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 </style>

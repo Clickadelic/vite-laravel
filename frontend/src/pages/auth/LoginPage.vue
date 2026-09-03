@@ -7,7 +7,7 @@ export default {
 <script setup lang="ts">
 import { reactive, ref } from "vue";
 import { useRouter } from "vue-router";
-import { useAuth } from "../composables/useAuth";
+import { useAuth } from "@/composables/useAuth";
 
 const router = useRouter();
 const { login } = useAuth();
@@ -46,8 +46,6 @@ const handleLogin = async () => {
 			<button type="submit" :disabled="loading">Login</button>
 		</form>
 
-		<p>
-			No account? <router-link to="/register">Register</router-link>
-		</p>
+		<p>No account? <router-link to="/register">Register</router-link></p>
 	</section>
 </template>

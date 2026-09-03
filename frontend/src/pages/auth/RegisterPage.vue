@@ -7,7 +7,7 @@ export default {
 <script setup lang="ts">
 import { reactive, ref } from "vue";
 import { useRouter } from "vue-router";
-import { useAuth } from "../composables/useAuth";
+import { useAuth } from "@/composables/useAuth";
 
 const router = useRouter();
 const { register } = useAuth();
@@ -46,17 +46,10 @@ const handleRegister = async () => {
 			<input v-model="registerForm.name" type="text" placeholder="Name" required />
 			<input v-model="registerForm.email" type="email" placeholder="Email" required />
 			<input v-model="registerForm.password" type="password" placeholder="Password" required />
-			<input
-				v-model="registerForm.password_confirmation"
-				type="password"
-				placeholder="Confirm password"
-				required
-			/>
+			<input v-model="registerForm.password_confirmation" type="password" placeholder="Confirm password" required />
 			<button type="submit" :disabled="loading">Register</button>
 		</form>
 
-		<p>
-			Already have an account? <router-link to="/login">Login</router-link>
-		</p>
+		<p>Already have an account? <router-link to="/login">Login</router-link></p>
 	</section>
 </template>

@@ -11,9 +11,6 @@ const { user } = useAuth();
 			Welcome back, <strong>{{ user.name }}</strong
 			>. Head to your <router-link to="/dashboard">dashboard</router-link>.
 		</p>
-		<p v-else>
-			<router-link to="/login">Login</router-link> or
-			<router-link to="/register">register</router-link> to get started.
-		</p>
+		<p v-else><router-link to="/auth/login">Login</router-link> or <router-link to="/auth/register">register</router-link> to get started.</p>
 	</section>
 </template>
