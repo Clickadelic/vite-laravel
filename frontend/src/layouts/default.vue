@@ -5,20 +5,30 @@ const { user } = useAuth();
 </script>
 
 <template>
-	<main id="app-shell">
-		<h1>Vite &amp; Laravel</h1>
+	<div class="default-layout">
+		<div class="wrap">
+			<header>
+				<h1>Vite &amp; Laravel</h1>
+				<nav class="app-nav">
+					<router-link to="/">Home</router-link>
+					<template v-if="user">
+						<router-link to="/dashboard">Dashboard</router-link>
+					</template>
+					<template v-else>
+						<router-link to="/login">Login</router-link>
+						<router-link to="/register">Register</router-link>
+					</template>
+				</nav>
+			</header>
+		</div>
 
-		<nav class="app-nav">
-			<router-link to="/">Home</router-link>
-			<template v-if="user">
-				<router-link to="/dashboard">Dashboard</router-link>
-			</template>
-			<template v-else>
-				<router-link to="/login">Login</router-link>
-				<router-link to="/register">Register</router-link>
-			</template>
-		</nav>
-
-		<router-view />
-	</main>
+		<main>
+			<router-view />
+		</main>
+		<div class="wrap">
+			<footer class="container mx-auto">
+				<p>All Rechte vorbehalten. &copy; 2026.</p>
+			</footer>
+		</div>
+	</div>
 </template>

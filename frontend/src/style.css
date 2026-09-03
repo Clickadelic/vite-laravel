@@ -1,97 +1,81 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --error: #dc3545;
+	--white: #fff;
+	--black: #000;
+	--gray: #626262;
+	--gray-light: #c3cbce;
+	--gray-dark: #4a5568;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+	--primary: #3a6258;
+	--secondary: #2c3f5a;
 
-  font: 16px/145% var(--sans);
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-}
+	--accent: #e37368;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-  }
-}
+	--text-small: 0.7rem;
+	--text-base: 1rem;
+	--text-medium: 1.125rem;
+	--text-large: 1.25rem;
+	--text-xlarge: 1.5rem;
 
-body {
-  margin: 0;
+	--font-sans: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 h1,
-h2 {
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-#app-shell {
-  max-width: 480px;
-  margin: 0 auto;
-  padding: 32px 20px;
-}
-
-.auth-layout {
-  text-align: center;
-}
-
-.auth-layout .auth-forms {
-  text-align: left;
-}
-
-.app-nav {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 24px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--border);
-}
-
-.app-nav a {
-  color: var(--text-h);
-  text-decoration: none;
-}
-
-.app-nav a.router-link-exact-active {
-  text-decoration: underline;
-}
-
-.auth-forms {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.auth-forms form {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-input,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+code,
+a,
+li,
 button {
-  font: inherit;
-  padding: 8px 10px;
-  border-radius: 4px;
-  border: 1px solid var(--border);
+	font-size: var(--text-base);
 }
 
-button {
-  cursor: pointer;
+body {
+	margin: 0;
+	padding: 0;
+	font-family: var(--font-sans);
 }
 
-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.6;
+@media (prefers-color-scheme: dark) {
+	/* :root {
+		--text: #9ca3af;
+		--text-h: #f3f4f6;
+		--bg: #16171d;
+		--border: #2e303a;
+	} */
 }
 
-.error {
-  color: var(--error);
+.default-layout {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: justify-between;
+	align-items: center;
+	min-height: 100vh;
+}
+
+main {
+	flex-grow: 1;
+}
+
+.wrap {
+	width: 100%;
+}
+
+.container {
+	max-width: 90rem;
+}
+
+.mx-auto {
+	margin: 0 auto;
 }
