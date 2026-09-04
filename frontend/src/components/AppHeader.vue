@@ -8,34 +8,19 @@ console.log("header component");
 </script>
 
 <template>
-	<div class="wrap">
-		<header class="container mx-auto py-4">
+	<div class="bg-emerald-800">
+		<header class="container mx-auto py-4 flex justify-between items-center">
 			<AppLogo />
-			<nav class="app-nav">
-				<router-link to="/">Home</router-link>
+			<nav class="flex items-center justify-end">
+				<router-link class="text-white hover:text-slate-300" to="/">Home</router-link>
 				<template v-if="user">
-					<router-link to="/dashboard">Dashboard</router-link>
+					<router-link class="text-white hover:text-slate-300" to="/dashboard">Dashboard</router-link>
 				</template>
 				<template v-else>
-					<router-link to="/auth/login">Login</router-link>
-					<router-link to="/auth/register">Register</router-link>
+					<router-link class="text-white hover:text-slate-300" to="/auth/login">Login</router-link>
+					<router-link class="text-white hover:text-slate-300" to="/auth/register">Register</router-link>
 				</template>
 			</nav>
 		</header>
 	</div>
 </template>
-
-<style scoped>
-/* Placeholder */
-
-.wrap {
-	background: var(--primary);
-	box-shadow: 1px 0 2px rgba(0, 0, 0, 0.75);
-}
-
-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-</style>

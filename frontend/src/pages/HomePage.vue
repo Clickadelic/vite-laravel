@@ -5,12 +5,11 @@ const { user } = useAuth();
 </script>
 
 <template>
-	<section>
+	<section class="py-12">
 		<h2>Home</h2>
 		<p v-if="user">
 			Welcome back, <strong>{{ user.name }}</strong
 			>. Head to your <router-link to="/dashboard">dashboard</router-link>.
 		</p>
-		<p v-else><router-link to="/auth/login">Login</router-link> or <router-link to="/auth/register">register</router-link> to get started.</p>
 	</section>
 </template>
