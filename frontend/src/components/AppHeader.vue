@@ -11,7 +11,7 @@ console.log("header component");
 	<div class="bg-emerald-800">
 		<header class="container mx-auto py-4 flex justify-between items-center">
 			<AppLogo />
-			<nav class="flex items-center justify-end">
+			<nav class="flex items-center justify-end gap-2">
 				<router-link class="text-white hover:text-slate-300" to="/">Home</router-link>
 				<template v-if="user">
 					<router-link class="text-white hover:text-slate-300" to="/dashboard">Dashboard</router-link>

@@ -17,7 +17,7 @@ const handleLogout = async () => {
 </script>
 
 <template>
-	<section>
+	<section class="py-12 text-gray-800">
 		<h2>Dashboard</h2>
 		<p v-if="user">
 			Logged in as <strong>{{ user.name }}</strong> ({{ user.email }})

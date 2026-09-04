@@ -7,7 +7,7 @@ const customAlert = () => {
 </script>
 <template>
 	<aside class="fixed w-64 top-0 left-0 bg-slate-100 min-h-screen">
-		<h1 class="my-3 text-center font-bold">Dashboard</h1>
+		<h1 class="my-3 text-center font-bold"><RouterLink to="/" class="hover:text-gray-300" title="Vue Todo" aria-label="Vue Todo">Vue Todo</RouterLink></h1>
 	</aside>
 	<header class="fixed w-full top-0 h-16 left-64 p-2 bg-slate-100 flex justify-between items-center gap-3">
 		<div class="flex justify-between items-center gap-3">
@@ -39,7 +39,7 @@ const customAlert = () => {
 			</ul>
 		</nav>
 	</header>
-	<main class="w-auto ml-64 pt-16 bg-white">Check<slot /></main>
+	<main class="w-auto ml-64 mt-16 bg-white text-gray-800"><router-view /></main>
 </template>
 
 <style scoped>
