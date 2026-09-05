@@ -14,6 +14,8 @@ console.log("header component");
 			<nav class="flex items-center justify-end gap-3">
 				<template v-if="user">
 					<router-link class="text-white hover:text-slate-300" to="/dashboard">Dashboard</router-link>
+					<router-link class="text-white hover:text-slate-300" to="/dashboard/profile/{{ user.id }}" title="Profil" aria-label="{{ user.name }}">{{ user.name }}</router-link>
+					<router-link class="text-white hover:text-slate-300" to="/auth/logout" title="Logout" aria-label="Logout">Logout</router-link>
 				</template>
 				<template v-else>
 					<router-link class="text-white hover:text-slate-300" to="/auth/login">Login</router-link>

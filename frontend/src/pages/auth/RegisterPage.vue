@@ -51,6 +51,6 @@ const handleRegister = async () => {
 			<button type="submit" :disabled="loading" class="bg-emerald-800 hover:bg-emerald-700 text-white hover:cursor-pointer border-gray-300 border px-3 py-2 rounded">Register</button>
 		</form>
 
-		<p class="text-center">Du hast schon einen Account? <router-link to="/auth/ogin">Login</router-link>.</p>
+		<p class="text-center">Du hast schon einen Account? <router-link to="/auth/login">Login</router-link>.</p>
 	</section>
 </template>

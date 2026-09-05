@@ -15,8 +15,13 @@ declare module "vue-router" {
 }
 
 // Resolves a page's `layout: '...'` option (see src/layouts/*.vue) to the
-// matching layout component. Pages that don't set `layout` get 'default'.
-const RouterLayout = createRouterLayout(layout => import(`../layouts/${layout}.vue`));
+// matching layout component. Pages that don't set `layout` fall back to the
+// literal name 'default', which is hardcoded by vue-router-layout itself -
+// alias it here to our default-layout.vue file.
+const RouterLayout = createRouterLayout(layout => {
+	const file = layout === "default" ? "default-layout" : layout;
+	return import(`../layouts/${file}.vue`);
+});
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
