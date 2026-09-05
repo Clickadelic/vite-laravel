@@ -26,7 +26,7 @@ const router = createRouter({
 			path: "/",
 			component: RouterLayout,
 			children: [
-				{ path: "", name: "home", component: HomePage },
+				{ path: "", name: "home", component: HomePage, meta: { title: "Vue Todo" } },
 				{ path: "auth/login", name: "login", component: LoginPage, meta: { guestOnly: true } },
 				{ path: "auth/register", name: "register", component: RegisterPage, meta: { guestOnly: true } },
 				{ path: "dashboard", name: "dashboard", component: IndexPage, meta: { requiresAuth: true } },
@@ -61,6 +61,10 @@ router.beforeEach(async to => {
 	}
 
 	return true;
+});
+
+router.afterEach(to => {
+	document.title = `${to.meta.title} | Toby's Vue Dashboard`;
 });
 
 export default router;
