@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import { createRouterLayout } from "vue-router-layout";
 import { useAuth } from "@/composables/useAuth";
 
-import DashboardPage from "@/pages/DashboardPage.vue";
+import IndexPage from "@/pages/dashboard/IndexPage.vue";
 import HomePage from "@/pages/HomePage.vue";
 import LoginPage from "@/pages/auth/LoginPage.vue";
 import RegisterPage from "@/pages/auth/RegisterPage.vue";
@@ -29,7 +29,7 @@ const router = createRouter({
 				{ path: "", name: "home", component: HomePage },
 				{ path: "auth/login", name: "login", component: LoginPage, meta: { guestOnly: true } },
 				{ path: "auth/register", name: "register", component: RegisterPage, meta: { guestOnly: true } },
-				{ path: "dashboard", name: "dashboard", component: DashboardPage, meta: { requiresAuth: true } },
+				{ path: "dashboard", name: "dashboard", component: IndexPage, meta: { requiresAuth: true } },
 				{ path: "about", name: "about", component: AboutPage }
 			]
 		}
