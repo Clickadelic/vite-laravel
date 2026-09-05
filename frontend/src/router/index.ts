@@ -6,7 +6,7 @@ import IndexPage from "@/pages/dashboard/IndexPage.vue";
 import HomePage from "@/pages/HomePage.vue";
 import LoginPage from "@/pages/auth/LoginPage.vue";
 import RegisterPage from "@/pages/auth/RegisterPage.vue";
-
+// import ProfilePage from "@/pages/dashboard/profile/profilePage.vue";
 declare module "vue-router" {
 	interface RouteMeta {
 		requiresAuth?: boolean;
@@ -29,6 +29,7 @@ const router = createRouter({
 				{ path: "auth/login", name: "login", component: LoginPage, meta: { title: "Login", guestOnly: true } },
 				{ path: "auth/register", name: "register", component: RegisterPage, meta: { title: "Registrierung", guestOnly: true } },
 				{ path: "dashboard", name: "dashboard", component: IndexPage, meta: { title: "Dashboard", requiresAuth: true } }
+				// { path: "dashboard/profile/:id", name: "userProfile", component: profilePage, meta: { title: "Profil", requiresAuth: true } }
 			]
 		}
 	]

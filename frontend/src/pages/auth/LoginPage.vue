@@ -1,6 +1,6 @@
 <script lang="ts">
 export default {
-	layout: "auth"
+	layout: "auth-layout"
 };
 </script>
 
@@ -36,16 +36,22 @@ const handleLogin = async () => {
 </script>
 
 <template>
-	<section class="auth-forms">
+	<section class="w-full">
 		<p v-if="errorMessage" class="error">{{ errorMessage }}</p>
 
-		<form @submit.prevent="handleLogin">
-			<h2>Login</h2>
-			<input v-model="loginForm.email" type="email" placeholder="Email" required />
-			<input v-model="loginForm.password" type="password" placeholder="Password" required />
-			<button type="submit" :disabled="loading">Login</button>
+		<form @submit.prevent="handleLogin" class="flex flex-col gap-3 mb-3">
+			<h2 class="text-center text-2xl font-medium mb-1">Login</h2>
+			<h3 class="text-center text-xl text-gray-500 mb-3">Willkommen zurück</h3>
+			<input v-model="loginForm.email" class="p-2 border border-gray-300 rounded-lg" type="email" placeholder="Email" required />
+			<input v-model="loginForm.password" class="p-2 border border-gray-300 rounded" type="password" placeholder="Password" required />
+			<button type="submit" :disabled="loading" class="bg-emerald-800 hover:bg-emerald-700 text-white hover:cursor-pointer border-gray-300 border px-3 py-2 rounded">Login</button>
 		</form>
 
-		<p>No account? <router-link to="/register">Register</router-link></p>
+		<p class="text-center mb-3">
+			Noch kein Account? Zur <router-link to="/auth/register" aria-label="Registrierung" title="Registrierung" class="text-emerald-800 hover:text-emerald-700">Registrierung</router-link>.
+		</p>
+		<p class="text-center text-sm">
+			Passwort vergessen? <router-link to="/auth/passwort-zuruecksetzen" aria-label="Passwort zurücksetzen" title="Passwort zurücksetzen" class="underline">Passwort zurücksetzen</router-link>.
+		</p>
 	</section>
 </template>

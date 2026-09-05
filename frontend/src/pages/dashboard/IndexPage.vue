@@ -1,6 +1,6 @@
 <script lang="ts">
 export default {
-	layout: "dashboard"
+	layout: "dashboardLayout"
 };
 </script>
 <script setup lang="ts">
