@@ -20,6 +20,7 @@ console.log("header component");
 					<router-link class="text-white hover:text-slate-300" to="/auth/login">Login</router-link>
 					<router-link class="text-white hover:text-slate-300" to="/auth/register">Register</router-link>
 				</template>
+				<router-link class="text-white hover:text-slate-300" to="/about">About</router-link>
 			</nav>
 		</header>
 	</div>

@@ -12,5 +12,3 @@ import AppFooter from "@/components/AppFooter.vue";
 		<AppFooter />
 	</div>
 </template>
-
-<style scoped></style>
