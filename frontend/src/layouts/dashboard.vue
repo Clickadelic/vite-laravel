@@ -11,7 +11,7 @@ const toggleSidebar = () => {
 };
 </script>
 <template>
-	<aside class="fixed w-64 top-0 left-0 bg-slate-100 min-h-screen">
+	<aside class="fixed w-64 top-0 left-0 bg-gray-200 min-h-screen">
 		<h1 class="my-3 text-center font-bold"><RouterLink to="/" class="hover:text-gray-300" title="Vue Todo" aria-label="Vue Todo">Vue Todo</RouterLink></h1>
 		<div class="absolute bottom-0 left-0 w-full h-24" v-if="user">
 			<nav>
@@ -23,7 +23,7 @@ const toggleSidebar = () => {
 			</nav>
 		</div>
 	</aside>
-	<header class="fixed w-full top-0 h-16 left-64 p-2 bg-slate-100 flex justify-between items-center gap-3">
+	<header class="fixed w-full top-0 h-16 left-64 p-2 bg-gray-200 flex justify-between items-center gap-3">
 		<div class="flex justify-between items-center gap-3">
 			<button class="bg-white rounded p-2 cursor-pointer size-8" @click="toggleSidebar">
 				<svg
@@ -62,7 +62,3 @@ const toggleSidebar = () => {
 	</header>
 	<main class="w-auto ml-72 mt-24 bg-white text-gray-800"><router-view /></main>
 </template>
-
-<style scoped>
-/* Placeholder */
-</style>

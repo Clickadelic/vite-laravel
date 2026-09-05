@@ -6,7 +6,6 @@ import IndexPage from "@/pages/dashboard/IndexPage.vue";
 import HomePage from "@/pages/HomePage.vue";
 import LoginPage from "@/pages/auth/LoginPage.vue";
 import RegisterPage from "@/pages/auth/RegisterPage.vue";
-import AboutPage from "@/pages/AboutPage.vue";
 
 declare module "vue-router" {
 	interface RouteMeta {
@@ -27,10 +26,9 @@ const router = createRouter({
 			component: RouterLayout,
 			children: [
 				{ path: "", name: "home", component: HomePage, meta: { title: "Vue Todo" } },
-				{ path: "auth/login", name: "login", component: LoginPage, meta: { guestOnly: true } },
-				{ path: "auth/register", name: "register", component: RegisterPage, meta: { guestOnly: true } },
-				{ path: "dashboard", name: "dashboard", component: IndexPage, meta: { requiresAuth: true } },
-				{ path: "about", name: "about", component: AboutPage }
+				{ path: "auth/login", name: "login", component: LoginPage, meta: { title: "Login", guestOnly: true } },
+				{ path: "auth/register", name: "register", component: RegisterPage, meta: { title: "Registrierung", guestOnly: true } },
+				{ path: "dashboard", name: "dashboard", component: IndexPage, meta: { title: "Dashboard", requiresAuth: true } }
 			]
 		}
 	]

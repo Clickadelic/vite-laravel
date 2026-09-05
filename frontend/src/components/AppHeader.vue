@@ -11,8 +11,7 @@ console.log("header component");
 	<div class="bg-emerald-800">
 		<header class="container mx-auto py-4 flex justify-between items-center">
 			<AppLogo />
-			<nav class="flex items-center justify-end gap-2">
-				<router-link class="text-white hover:text-slate-300" to="/">Home</router-link>
+			<nav class="flex items-center justify-end gap-3">
 				<template v-if="user">
 					<router-link class="text-white hover:text-slate-300" to="/dashboard">Dashboard</router-link>
 				</template>
@@ -20,7 +19,6 @@ console.log("header component");
 					<router-link class="text-white hover:text-slate-300" to="/auth/login">Login</router-link>
 					<router-link class="text-white hover:text-slate-300" to="/auth/register">Register</router-link>
 				</template>
-				<router-link class="text-white hover:text-slate-300" to="/about">About</router-link>
 			</nav>
 		</header>
 	</div>
